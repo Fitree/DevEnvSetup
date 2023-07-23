@@ -1,0 +1,24 @@
+Host Leo-Ubuntu-Internal
+    HostName 192.168.0.14
+    User songsub
+    Port 22
+
+Host Leo-Ubuntu
+    HostName learningleo.iptime.org
+    User songsub
+    Port 32310
+
+Host AmazeVR-AI
+    HostName 192.168.1.215
+    User leo
+    Port 22
+
+Host AmazeVR-AI2
+    HostName 192.168.1.251
+    User leo
+    Port 22
+
+Host AmazeVR-AI3
+    HostName 192.168.1.2
+    User leo
+    Port 22

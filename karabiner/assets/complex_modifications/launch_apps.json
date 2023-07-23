@@ -1,0 +1,128 @@
+{
+    "title": "Launch apps",
+    "rules": [
+      {
+        "description": "Launch Finder.",
+        "manipulators": [
+          {
+            "type": "basic",
+            "from": {
+              "key_code": "p",
+              "modifiers": {
+                "mandatory": [
+                  "left_control",
+                  "left_command"
+                ],
+                "optional": [
+                  "caps_lock"
+                ]
+              }
+            },
+            "to": [
+              {
+                "shell_command": "open ~"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "description": "Launch VS code.",
+        "manipulators": [
+          {
+            "type": "basic",
+            "from": {
+              "key_code": "o",
+              "modifiers": {
+                "mandatory": [
+                  "left_control",
+                  "left_command"
+                ],
+                "optional": [
+                  "caps_lock"
+                ]
+              }
+            },
+            "to": [
+              {
+                "shell_command": "open '/Applications/Visual Studio Code.app'"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "description": "Launch iTerm.",
+        "manipulators": [
+          {
+            "type": "basic",
+            "from": {
+              "key_code": "0",
+              "modifiers": {
+                "mandatory": [
+                  "left_control", "left_command"
+                ],
+                "optional": [
+                  "caps_lock"
+                ]
+              }
+            },
+            "to": [
+              {
+                "shell_command": "open '/Applications/iTerm.app'"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "description": "Launch Internet Browser.",
+        "manipulators": [
+          {
+            "type": "basic",
+            "from": {
+              "key_code": "i",
+              "modifiers": {
+                "mandatory": [
+                  "left_control", "left_command"
+                ],
+                "optional": [
+                  "caps_lock"
+                ]
+              }
+            },
+            "to": [
+              {
+                "shell_command": "open '/Applications/Google Chrome.app'"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "description": "Launch Notion.",
+        "manipulators": [
+          {
+            "type": "basic",
+            "from": {
+              "key_code": "n",
+              "modifiers": {
+                "mandatory": [
+                  "left_control", "left_command"
+                ],
+                "optional": [
+                  "caps_lock"
+                ]
+              }
+            },
+            "to": [
+              {
+                "shell_command": "open '/Applications/Notion.app'"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+  
