@@ -1,0 +1,9 @@
+[user]
+	name = Leo Lee
+	email = songsub.leo.lee@gmail.com
+
+[alias]
+	st = status
+	co = checkout
+	ci = commit --signoff -m
+	ad = add
