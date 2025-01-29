@@ -83,9 +83,9 @@ def backup_files():
 def download_config_files():
     print_title("Download configuration files")
     download_list = [
-        (".zshrc", "https://raw.githubusercontent.com/Fitree/dev-env-setup/refs/heads/main/home_files/.zshrc"),
-        (".p10k.zsh", "https://raw.githubusercontent.com/Fitree/dev-env-setup/refs/heads/main/home_files/.p10k.zsh"),
-        (".tmux.conf", "https://raw.githubusercontent.com/Fitree/dev-env-setup/refs/heads/main/home_files/.tmux.conf"),
+        (".zshrc", "https://raw.githubusercontent.com/Fitree/dev-env-setup/refs/heads/main/configs/.zshrc"),
+        (".p10k.zsh", "https://raw.githubusercontent.com/Fitree/dev-env-setup/refs/heads/main/configs/.p10k.zsh"),
+        (".tmux.conf", "https://raw.githubusercontent.com/Fitree/dev-env-setup/refs/heads/main/configs/.tmux.conf"),
     ]
 
     home = Path.home()
@@ -129,7 +129,7 @@ def download_config_files():
 def download_and_append_config():
     print_title("Append configuration on existing one")
     download_list = [
-        (".gitconfig", "https://raw.githubusercontent.com/Fitree/dev-env-setup/refs/heads/main/home_files/.gitconfig"),
+        (".gitconfig", "https://raw.githubusercontent.com/Fitree/dev-env-setup/refs/heads/main/configs/.gitconfig"),
     ]
 
     home = Path.home()
