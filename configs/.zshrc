@@ -111,6 +111,7 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias tmux="tmux -u"
 
 # osx ls alias
 if [[ -x "$(command -v gls)" ]]; then
@@ -123,6 +124,7 @@ fi
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+# Add vscode ipc hook
 refresh_vscode_ipc() {
     VSCODE_IPC_HOOK_CLI=$(ls -1t /tmp/vscode-ipc-* 2>/dev/null | head -n 1)
     echo "VSCODE_IPC_HOOK_CLI set to: $VSCODE_IPC_HOOK_CLI"
