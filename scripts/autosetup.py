@@ -165,3 +165,4 @@ if __name__ == "__main__":
     try_intall_zsh_plugins()
     download_config_files()
     download_and_append_config()
+
