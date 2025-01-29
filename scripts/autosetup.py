@@ -4,7 +4,6 @@ from pathlib import Path
 
 YELLOW = "\033[93m"
 BLUE = "\033[38;2;1;173;252m"
-BOLD_BLUE = "\033[1;38;2;1;173;252m"
 RESET = "\033[0m"
 
 
@@ -166,4 +165,6 @@ if __name__ == "__main__":
     try_intall_zsh_plugins()
     download_config_files()
     download_and_append_config()
-    print_title("Autosetup completed!", color=BOLD_BLUE)
+
+    print_title("Autosetup completed!", color=BLUE)
+    print()
