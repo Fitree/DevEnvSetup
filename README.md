@@ -15,6 +15,5 @@ The following tools are optional (but recommended) to be installed on your syste
 # How to use
 
 ```bash
-python3 -c "$(curl -fsSL https://raw.githubusercontent.com/Fitree/dev-env-setup/refs/heads/main/scripts/aut
-osetup.py)"
+python3 -c "$(curl -fsSL https://raw.githubusercontent.com/Fitree/dev-env-setup/refs/heads/main/scripts/autosetup.py)"
 ```
