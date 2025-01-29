@@ -17,7 +17,7 @@ def print_title(title, color=BLUE):
 
 def check_requirements():
     print_title("Check requirements")
-    requirements = ["zsh", "tmux", "git"]
+    requirements = ["zsh", "tmux", "git", "curl"]
     satisfied = True
     for req in requirements:
         res = subprocess.run(
@@ -165,4 +165,3 @@ if __name__ == "__main__":
     try_intall_zsh_plugins()
     download_config_files()
     download_and_append_config()
-
