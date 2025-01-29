@@ -166,3 +166,4 @@ if __name__ == "__main__":
     download_config_files()
     download_and_append_config()
 
+    print("🚀🚀 Complete! 🚀🚀")
