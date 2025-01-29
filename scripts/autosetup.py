@@ -2,6 +2,7 @@ import subprocess
 from pathlib import Path
 
 
+GREEN = "\033[92m"
 YELLOW = "\033[93m"
 BLUE = "\033[94m"
 RESET = "\033[0m"
@@ -165,6 +166,4 @@ if __name__ == "__main__":
     try_intall_zsh_plugins()
     download_config_files()
     download_and_append_config()
-
-    print_title("🚀🚀 Complete! 🚀🚀")
-    print()
+    print_title("Autosetup completed!", color=GREEN)
