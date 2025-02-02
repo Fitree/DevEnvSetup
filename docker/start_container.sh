@@ -1,18 +1,19 @@
 #!/bin/bash
 
 if [ -z "$1" ]; then
-    echo "Usage: $0 <workspace-dir>"
+    echo "Usage: $0 <workspace-dir> [container-name]"
     exit 1
 fi
 
-DOCKER_UNAME=docker-$(id -un)
-DOCKER_NAME=dev-$(id -un)
+WORKSPACE_DIR=$1
+CONTAINER_NAME=$2
+DOCKER_NAME=dev-ubt2204-cu124-py310
 
 docker run -it \
-  --name $DOCKER_NAME \
+  --name $CONTAINER_NAME \
   -e TERM=xterm-256color \
   -u $(id -u):$(id -g) \
-  -v $1:/workspace \
+  -v $WORKSPACE_DIR:/workspace \
   --ipc=host \
   --network host \
   --shm-size=512g \
