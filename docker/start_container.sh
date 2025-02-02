@@ -8,7 +8,7 @@ fi
 DOCKER_UNAME=docker-$(id -un)
 DOCKER_NAME=dev-$(id -un)
 
-docker run -it --rm \
+docker run -it \
   --name $DOCKER_NAME \
   -e TERM=xterm-256color \
   -u $(id -u):$(id -g) \
