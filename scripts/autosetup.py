@@ -17,7 +17,7 @@ def print_title(title, color=BLUE):
 
 def check_requirements():
     print_title("Check requirements")
-    requirements = ["zsh", "tmux", "git", "curl"]
+    requirements = ["zsh", "git", "curl"]
     satisfied = True
     for req in requirements:
         res = subprocess.run(
@@ -35,6 +35,22 @@ def check_requirements():
 
     if not satisfied:
         print("Please install the missing requirements and run the script again.")
+
+    print_title("Check optional requirements")
+    optional = ["tmux"]
+    for opt in optional:
+        res = subprocess.run(
+            f"which {opt}",
+            shell=True,
+            capture_output=True,
+            text=True,
+            )
+        if res.returncode != 0:
+            print("❌", end="")
+            satisfied = False
+        else:
+            print("✅", end="")
+        print(req)
 
 
 def try_install_oh_my_zsh():
