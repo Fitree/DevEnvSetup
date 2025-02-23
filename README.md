@@ -1,7 +1,7 @@
 # Development Environment Setup
 Archive of personal development environment autosetup for Unix-like systems.
 
-# Autosetup Environment
+# Autosetup
 
 ## System requirements
 The following tools are required to be installed on your system:
@@ -19,3 +19,6 @@ To run the autosetup script, run the following command in your terminal. It shou
 ```bash
 python3 -c "$(curl -fsSL https://raw.githubusercontent.com/Fitree/dev-env-setup/refs/heads/main/scripts/autosetup.py)"
 ```
+
+# Development Container
+You can use the development container to run the autosetup script.

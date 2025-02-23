@@ -6,7 +6,13 @@ if [ -z "$1" ]; then
 fi
 
 WORKSPACE_DIR=$1
-CONTAINER_NAME=$2
+if [ -z "$2" ]; then
+    echo "No container name provided. Using default: dev-ubt2204-cu124-py310"
+    CONTAINER_NAME="dev-ubt2204-cu124-py310"
+else
+    CONTAINER_NAME=$2
+fi
+
 DOCKER_NAME=dev-ubt2204-cu124-py310
 
 docker run -it \
