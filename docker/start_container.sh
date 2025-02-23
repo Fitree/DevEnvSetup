@@ -15,6 +15,14 @@ fi
 
 DOCKER_NAME=dev-ubt2204-cu124-py310
 
+SSH_DIR="$HOME/.ssh"
+if [ -d "$SSH_DIR" ]; then
+    MOUNT_SSH="-v $SSH_DIR:/home/$DOCKER_UNAME/.ssh"
+else
+    echo "$SSH_DIR will not be mounted. It does not exist."
+    MOUNT_SSH=""
+fi
+
 docker run -it \
   --name $CONTAINER_NAME \
   -e TERM=xterm-256color \
@@ -23,4 +31,5 @@ docker run -it \
   --ipc=host \
   --network host \
   --shm-size=512g \
+  $MOUNT_SSH \
   $DOCKER_NAME bash -c "python3 -c \"\$(curl -fsSL https://raw.githubusercontent.com/Fitree/dev-env-setup/refs/heads/main/scripts/autosetup.py)\" && zsh"
