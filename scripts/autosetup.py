@@ -175,12 +175,64 @@ def download_and_append_config():
             print(f"  ✅Appended configuration to {file_name}")
 
 
+def install_claude_code():
+    print_title("Install Claude Code")
+    res = subprocess.run(
+        "curl -fsSL https://claude.ai/install.sh | bash",
+        shell=True,
+        capture_output=True,
+        text=True,
+    )
+    if res.returncode == 0:
+        print("✅Claude installation script executed successfully.")
+    else:
+        print("❌Claude installation script failed to execute.")
+        print(res.stderr)
+
+    zshrc_path = Path.home() / ".zshrc"
+    if zshrc_path.exists():
+        res = subprocess.run(
+            "echo 'export PATH=\"$HOME/.local/bin:$PATH\"' >> ~/.zshrc",
+            shell=True,
+            capture_output=True,
+            text=True,
+        )
+        if res.returncode == 0:
+            print("✅Successfully added Claude to PATH in .zshrc.")
+        else:
+            print("❌Failed to add Claude to PATH in .zshrc.")
+            print(res.stderr)
+    else:
+        print(f"⚠️ {zshrc_path} does not exist, skipping PATH modification in .zshrc.")
+
+    bashrc_path = Path.home() / ".bashrc"
+    if bashrc_path.exists():
+        res = subprocess.run(
+            "echo 'export PATH=\"$HOME/.local/bin:$PATH\"' >> ~/.bashrc",
+            shell=True,
+            capture_output=True,
+            text=True,
+        )
+        if res.returncode == 0:
+            print("✅Successfully added Claude to PATH in .bashrc.")
+        else:
+            print("❌Failed to add Claude to PATH in .bashrc.")
+            print(res.stderr)
+    else:
+        print(f"⚠️ {bashrc_path} does not exist, skipping PATH modification in .bashrc.")
+
+
 if __name__ == "__main__":
     check_requirements()
     try_install_oh_my_zsh()
     try_intall_zsh_plugins()
     download_config_files()
     download_and_append_config()
+    install_claude_code()
 
     print_title("Autosetup completed!", color=BLUE)
+    print(
+        "Please restart your terminal or run 'source ~/.zshrc' "
+        "(or `source ~/.bashrc`) to apply the changes."
+    )
     print()
