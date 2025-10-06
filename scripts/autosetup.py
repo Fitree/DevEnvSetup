@@ -276,7 +276,8 @@ if __name__ == "__main__":
     try_intall_zsh_plugins()
     download_config_files()
     download_and_append_config()
-    install_claude_code()
+    # install_claude_code()
+    install_opencode()
 
     print_title("Autosetup completed!", color=BLUE)
     print(
