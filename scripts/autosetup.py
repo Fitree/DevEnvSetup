@@ -174,6 +174,36 @@ def download_and_append_config():
                 f.write(res.stdout)
             print(f"  ✅Appended configuration to {file_name}")
 
+def install_opencode():
+    print_title("Install Opencode")
+    res = subprocess.run(
+        "curl -fsSL https://opencode.ai/install | bash",
+        shell=True,
+        capture_output=True,
+        text=True,
+    )
+    if res.returncode == 0:
+        print("✅Opencode installation script executed successfully.")
+    else:
+        print("❌Opencode installation script failed to execute.")
+        print(res.stderr)
+
+    zshrc_path = Path.home() / ".zshrc"
+    if zshrc_path.exists():
+        res = subprocess.run(
+            "echo '\n#Opencode\nexport PATH=\"$HOME/.opencode/bin:$PATH\"' >> ~/.zshrc",
+            shell=True,
+            capture_output=True,
+            text=True,
+        )
+        if res.returncode == 0:
+            print("✅Successfully added Opencode to PATH in .zshrc.")
+        else:
+            print("❌Failed to add Claude to PATH in .zshrc.")
+            print(res.stderr)
+    else:
+        print(f"⚠️ {zshrc_path} does not exist, skipping PATH modification in .zshrc.")
+
 
 def install_claude_code():
     print_title("Install Claude Code")
