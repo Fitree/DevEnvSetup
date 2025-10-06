@@ -17,7 +17,7 @@ The following tools are optional but recommended:
 To run the autosetup script, run the following command in your terminal. It should be run using python3.
 
 ```bash
-python3 -c "$(curl -fsSL https://raw.githubusercontent.com/Fitree/dev-env-setup/refs/heads/main/scripts/autosetup.py)"
+python3 -c "$(curl -fsSL https://raw.githubusercontent.com/Fitree/DevEnvSetup/refs/heads/main/scripts/autosetup.py)"
 ```
 
 # Development Container
