@@ -102,6 +102,7 @@ def download_config_files():
         (".zshrc", "https://raw.githubusercontent.com/Fitree/dev-env-setup/refs/heads/main/configs/zshrc"),
         (".p10k.zsh", "https://raw.githubusercontent.com/Fitree/dev-env-setup/refs/heads/main/configs/p10k.zsh"),
         (".tmux.conf", "https://raw.githubusercontent.com/Fitree/dev-env-setup/refs/heads/main/configs/tmux.conf"),
+        ("opencode.json", "https://raw.githubusercontent.com/Fitree/DevEnvSetup/refs/heads/main/configs/opencode.json")
     ]
 
     home = Path.home()
@@ -204,6 +205,23 @@ def install_opencode():
     else:
         print(f"⚠️ {zshrc_path} does not exist, skipping PATH modification in .zshrc.")
 
+    cfg_path = Path.home() / ".config/opencode/opencode.json"
+    if cfg_path.exists():
+        print(f"⚠️ {cfg_path} already exists, skipping download.")
+    else:
+        cfg_path.parent.mkdir(parents=True, exist_ok=True)
+        cfg_url = "https://raw.githubusercontent.com/Fitree/DevEnvSetup/refs/heads/main/configs/opencode.json"
+        res = subprocess.run(
+            f"curl -fsSL {cfg_url} -o {cfg_path}",
+            shell=True,
+            capture_output=True,
+            text=True,
+        )
+        if res.returncode == 0:
+            print("✅Successfully downloaded opencode.json configuration file.")
+        else:
+            print("❌Failed to download opencode.json configuration file.")
+            print(res.stderr)
 
 def install_claude_code():
     print_title("Install Claude Code")
